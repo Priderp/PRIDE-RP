@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PRIDE RP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Меню (три полоски) -->
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Меню -->
+  <div class="menu" id="menu">
+    <div class="menu-close" onclick="closeMenu()">×</div>
+    <a href="index.html" class="menu-item">Главная</a>
+    <a href="#" class="menu-item" onclick="alert('Форум пока в разработке!')">Форум</a>
+    <a href="#" class="menu-item" onclick="alert('База знаний пока в разработке!')">База знаний</a>
+    <a href="#" class="menu-item" onclick="alert('Лидеры проекта пока в разработке!')">Лидеры проекта</a>
+    <a href="https://discord.gg/essWBJVMsc" target="_blank" class="menu-item">Discord</a>
+  </div>
+
+  <div class="logo">PRIDE RP</div>
+  <div class="tagline">Выбирай сам кем хочешь стать!</div>
+
+  <button class="btn" onclick="window.location.href='download.html'">НАЧАТЬ ИГРУ</button>
+
+  <div class="stats">
+    <div>Сейчас в игре</div>
+    <div>0 игроков</div>
+  </div>
+
+  <div class="news-title">Новости проекта</div>
+  <img src="https://i.imgur.com/5ZJkQmK.png" alt="Новости PRIDE RP" class="news-img">
+
+  <div class="news-title">Открыт Discord сервер!</div>
+  <a href="https://discord.gg/essWBJVMsc" target="_blank" class="discord-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.317 4.37a19.791 19.791 0 00-4.885-4.884A20.21 20.21 0 0012 0C8.687 0 5.73 1.069 3.317 2.967A19.79 19.79 0 000 4.37a1.2 1.2 0 00-.186.826C0 6.214 1.476 7.218 2.68 7.913a16.374 16.374 0 003.777 16.505c1.136 1.098 2.464 1.08 3.602 0A16.377 16.377 0 0012 25.6c.703 0 1.394-.055 2.077-.168a16.374 16.374 0 003.777-16.505c1.204-.695 2.68-1.699 2.68-2.717a1.2 1.2 0 00-.186-.826zM8.02 18.84a1.02 1.02 0 01-1.003-.887 13.316 13.316 0 01-.987-5.324 1.02 1.02 0 011.003-.932 1.02 1.02 0 011.004.932 13.316 13.316 0 01-.987 5.324 1.02 1.02 0 01-1.003.887zm7.96 0a1.02 1.02 0 01-1.003-.887 13.316 13.316 0 01-.987-5.324 1.02 1.02 0 011.003-.932 1.02 1.02 0 011.004.932 13.316 13.316 0 01-.987 5.324 1.02 1.02 0 01-1.003.887zm-4.37-10.28c-2.98 0-5.364-1.48-5.364-3.314 0-1.835 2.384-3.315 5.364-3.315 2.98 0 5.364 1.48 5.364 3.315 0 1.834-2.384 3.314-5.364 3.314z"/>
+    </svg>
+    Discord
+  </a>
+
+  <div class="footer">
+    © 2025 PRIDE RP. Все права защищены.
+  </div>
+
+  <script>
+    // Меню (три полоски)
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+
+    function closeMenu() {
+      menuToggle.classList.remove('active');
+      menu.classList.remove('active');
+    }
+
+    // Закрытие меню при клике вне его
+    window.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        menu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
