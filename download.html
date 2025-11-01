@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Начни играть — PRIDE RP</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: #0a0a12;
+      color: #b0b0ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+    .logo {
+      font-size: 52px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #9c6aff, #6a4ae0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 10px rgba(156, 106, 255, 0.5);
+    }
+    .tagline {
+      font-size: 24px;
+      margin: 20px 0;
+      color: #9c6aff;
+      text-align: center;
+    }
+    .description {
+      font-size: 16px;
+      margin: 30px 0;
+      color: #a0a0d0;
+      text-align: center;
+      line-height: 1.5;
+      max-width: 80%;
+    }
+    .btn {
+      width: 80%;
+      max-width: 400px;
+      padding: 16px 0;
+      font-size: 20px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: white;
+    }
+    .google-btn {
+      background: linear-gradient(135deg, #28a745, #207d3a);
+      border: 2px solid #28a745;
+    }
+    .apple-btn {
+      background: linear-gradient(135deg, #808080, #505050);
+      border: 2px solid #808080;
+    }
+    .apk-btn {
+      background: linear-gradient(135deg, #9c27b0, #6a1b9a);
+      border: 2px solid #9c27b0;
+    }
+    .footer {
+      margin-top: auto;
+      padding: 30px 0;
+      color: #606080;
+      font-size: 14px;
+      text-align: center;
+    }
+    /* Меню (три полоски) */
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #9c6aff;
+      transition: all 0.3s ease;
+    }
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 18, 0.95);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .menu-item {
+      font-size: 24px;
+      color: #b0b0ff;
+      margin: 20px 0;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .menu-item:hover {
+      color: white;
+      border-bottom: 2px solid #9c6aff;
+    }
+    .menu-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      color: #9c6aff;
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      .logo { font-size: 38px; }
+      .btn { width: 90%; padding: 14px 0; font-size: 18px; }
+      .description { max-width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Меню (три полоски) -->
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Меню -->
+  <div class="menu" id="menu">
+    <div class="menu-close" onclick="closeMenu()">×</div>
+    <a href="index.html" class="menu-item">Главная</a>
+    <a href="#" class="menu-item" onclick="alert('Форум пока в разработке!')">Форум</a>
+    <a href="#" class="menu-item" onclick="alert('База знаний пока в разработке!')">База знаний</a>
+    <a href="#" class="menu-item" onclick="alert('Лидеры проекта пока в разработке!')">Лидеры проекта</a>
+    <a href="https://discord.gg/essWBJVMsc" target="_blank" class="menu-item">Discord</a>
+  </div>
+
+  <div class="logo">PRIDE RP</div>
+
+  <div class="tagline">Начни играть прямо сейчас!</div>
+
+  <div class="description">
+    Скачай Скачай «PRIDE RP» на свой телефон или планшет и погрузись в захватывающий мир борьбы за власть, бизнесов и увлекательных приключений!
+  </div>
+
+  <div class="description">
+    Скачай и установи приложение, дождись загрузки файлов и начни играть:
+  </div>
+
+  <button class="btn google-btn" onclick="alert('Google Play — в разработке!')">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2l3.09 6.26L22 9.27l-7 5.21L12 22l-3.09-6.26L2 14.73l7-5.21L12 2z"/>
+    </svg>
+    Google Play
+  </button>
+
+  <button class="btn apple-btn" onclick="alert('App Store — в разработке!')">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-2.94 2.45-1.24 0-1.99-1.1-2.85-2.45-1.06-1.66-1.92-3.47-1.92-5.5 0-2.02.86-3.83 1.92-5.5 1.06-1.66 2.37-2.45 3.77-2.45 1.24 0 2.12 1.1 2.94 2.45 1.06 1.66 1.92 3.47 1.92 5.5 0 2.03-.86 3.84-1.92 5.5zm-2.94-10.5c-.52 0-1.06.37-1.54 1.1-1.06 1.66-1.92 3.47-1.92 5.5 0 2.03.86 3.84 1.92 5.5.48.73 1.02 1.1 1.54 1.1.52 0 1.06-.37 1.54-1.1 1.06-1.66 1.92-3.47 1.92-5.5 0-2.02-.86-3.83-1.92-5.5-.48-.73-1.02-1.1-1.54-1.1z"/>
+    </svg>
+    AppStore
+  </button>
+
+  <button class="btn apk-btn" onclick="alert('APK — скоро! Подпишись на Discord.')">
+    APK
+  </button>
+
+  <div class="footer">
+    © 2025 PRIDE RP. Все права защищены.
+  </div>
+
+  <script>
+    // Меню (три полоски)
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+
+    function closeMenu() {
+      menuToggle.classList.remove('active');
+      menu.classList.remove('active');
+    }
+
+    // Закрытие меню при клике вне его
+    window.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        menu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
